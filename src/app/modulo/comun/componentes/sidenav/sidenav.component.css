@@ -1,0 +1,42 @@
+.panelcentral-container{
+    display:flex;
+    flex-direction: column;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+h1.titulomenu{
+    margin-left: 10px;
+    
+}
+
+.menusidenav{
+    flex: 1;
+}
+
+ul li {
+    list-style: none;
+}
+
+div ul {
+    display: flex;
+    align-items: center;
+}
+
+.derecha {
+    margin-left: auto;
+}
+
+.tituloCompetezia {
+    text-align: center;
+    padding: 10;
+
+}
+
+.cabecera{
+    margin-top: 20px;
+}
+

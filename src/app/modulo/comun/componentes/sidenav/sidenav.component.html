@@ -1,12 +1,49 @@
 
 <div class="panelcentral-container">
-    <mat-toolbar color="primary">
-        <button mat-icon-button>
+    <!-- Aqui comienza el toolbar
+     -->
+    <mat-toolbar>
+        <button mat-icon-button (click)="snav.toggle()">
             <mat-icon>menu</mat-icon>
         </button>
         <h1 class="titulomenu">Empleados</h1>
-    </mat-toolbar>
-    
-    <router-outlet></router-outlet> 
+        <div class="derecha">
+            <ul>
+                <li>
+                    <button mat-icon-button>
+                        <mat-icon>help</mat-icon>
+                    </button>
+                </li>
+                <li>
+                    <button mat-button [matMenuTriggerFor]="menu">
+                        <mat-icon>login</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                       <mat-icon>logout</mat-icon>
+                       Cerrar sesión
+                    </mat-menu>
+                </li>
+            </ul>
+        </div>
+    </mat-toolbar> 
+    <!-- Aqui comienza el sindenav-->
+    <mat-sidenav-container class="menusidenav">
+        <mat-sidenav #snav mode="side" fixedTopGap="60">
+            <mat-nav-list>
+                <div class="tituloCompetezia">
+                    <div class="cabecera">
+                        <h3>CompeteZia</h3>
+                    </div>
+                </div>
+                <mat-divider></mat-divider>
+                <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of menuNav">
+                    <mat-icon>{{nav.icon}}</mat-icon><strong>{{nav.name}}</strong>
+                </a>
+            </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
 </div>
 
