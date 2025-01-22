@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './componentes/home/home.component';
 import { PanelcentralComponent } from './paginas/panelcentral.component';
 import { RouterModule } from '@angular/router';
+import { ComunModule } from '../comun/comun.module';
 
 
 
@@ -14,7 +15,8 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ComunModule
   ]
 })
 export class PanelcentralModule { }

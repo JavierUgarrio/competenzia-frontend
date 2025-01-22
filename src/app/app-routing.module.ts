@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PanelCentralRoutingModule } from './modulo/panelcentral/panelcentral-routing.module';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: './panelcentral' },
+  { path: '', pathMatch: 'full', redirectTo: '/panelcentral' },
 
 ];
 
