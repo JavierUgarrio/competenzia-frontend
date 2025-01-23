@@ -4,6 +4,7 @@ import { HomeComponent } from './componentes/home/home.component';
 import { PanelcentralComponent } from './paginas/panelcentral.component';
 import { RouterModule } from '@angular/router';
 import { ComunModule } from '../comun/comun.module';
+import { EmpleadoModule } from '../empleados/empleado.module';
 
 
 
@@ -16,7 +17,8 @@ import { ComunModule } from '../comun/comun.module';
   imports: [
     CommonModule,
     RouterModule,
-    ComunModule
+    ComunModule, 
+    EmpleadoModule
   ]
 })
 export class PanelcentralModule { }

@@ -1,0 +1,18 @@
+.titulo{
+    text-align: left;
+    margin-top: 15;
+
+}
+
+ul li{
+    list-style: none;
+}
+
+.botonagregar{
+    color: #fafcfa;
+    background-color:#0f450c ;
+}
+
+.buscador{
+    margin-left: auto;
+}

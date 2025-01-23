@@ -4,6 +4,7 @@ import { SidenavComponent } from './componentes/sidenav/sidenav.component';
 
 import { MaterialModule } from './material.module';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -19,7 +20,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     MaterialModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ]
 })
 export class ComunModule { }
