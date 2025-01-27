@@ -14,20 +14,7 @@ export class EmpleadoService {
 
   constructor(private http: HttpClient) { }
 
-  /*
-  metodo para obtener los empleados a traves del metodo get. 
-  Se consigue todos los empleados
-  
-  getEmpleados(){
-    const endpoint = `${(url)}/empleados`;
-    return this.http.get(endpoint);
-  }
-  */
-  /*
-  metodo para obtener los empleados a traves del metodo get.
-  
-
-  */
+ 
  /**
    * Método para obtener todos los empleados a través de la API.
    * 
@@ -39,6 +26,14 @@ export class EmpleadoService {
     map(respuesta => respuesta.respuestaEmpleados.empleados) // Extrae solo el arreglo de empleados
   );
 }
+
+/**
+ * Metodo para guardar nuevo empleado
+ */
+ guardarEmpleado(empleado : any){
+  return this.http.post(`${this.urlApi}/empleados`, empleado);
+ }
+
 }
 
 export interface EmpleadoServicio{
