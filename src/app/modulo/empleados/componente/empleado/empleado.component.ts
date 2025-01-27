@@ -1,7 +1,8 @@
 import { Component, OnInit,inject } from '@angular/core';
-import { EmpleadoService } from 'src/app/modulo/comun/servicios/empleado.service';
+import { EmpleadoService, EmpleadoServicio } from 'src/app/modulo/comun/servicios/empleado.service';
 import { Observable,of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'empleado',
@@ -11,24 +12,20 @@ import { catchError } from 'rxjs/operators';
 export class EmpleadoComponent implements OnInit {
 
   private _empleadoServicios = inject(EmpleadoService);
+  empleados:EmpleadoServicio [] = [];
+  columnas : string[] = ['id','nombre','apellidos','empresa','equipo','email','telefono','acciones'];
 
   ngOnInit(): void {
-    this.getEmpleado();
+    this._empleadoServicios.getEmpleados().subscribe({
+      next: (data: any) => {
+        this.empleados = data; // Aquí se asigna la lista de empleados
+      },
+      error: (error) => {
+        console.error('Error al obtener los empleados:', error);
+      },
+    });
   }
-  /**
-   * es un metodo que llama al servicioEmpleado para obtener los datos
-   * utilizando subscribe para que cuando este listo y realice la peticion, se cargue los datos
-   */
-  getEmpleado(): void {
-    this._empleadoServicios.getEmpleados()
-    .subscribe(
-        (datoempleado: any) => {
-          console.log("respuesta empleados: ", datoempleado);
-        },
-        (error: any) => {
-          console.error("Error al obtener empleados: ", error);
-        }
-      );
-  }
-  
+
+ 
+ 
 }
