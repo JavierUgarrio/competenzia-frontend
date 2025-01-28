@@ -34,7 +34,15 @@ export class EmpleadoService {
   return this.http.post(`${this.urlApi}/empleados`, empleado);
  }
 
+ /**
+ * Metodo para actualizar empleado
+ */
+
+ actualizarEmpleado(empleado :any, id:number){
+  return this.http.put(`${this.urlApi}/empleados/${id}`, empleado);
+ }
 }
+
 
 export interface EmpleadoServicio{
   id: number;

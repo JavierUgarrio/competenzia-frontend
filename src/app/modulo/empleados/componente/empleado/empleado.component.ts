@@ -53,6 +53,22 @@ export class EmpleadoComponent implements OnInit {
     });
   }
 
+  editar(id:number,nombre:string,apellidos:string,empresa:string,equipo:string, email:string,telefono:number){
+    const dialogRef = this.dialog.open( FormularioEmpleadoComponent, { // Aquí se abre el diálogo, hay un espacio vacio que tendre que crear un formulario como componente y añadirlo
+      width: '600px',
+      data: {id :id, nombre:nombre, apellidos:apellidos, empresa:empresa, equipo:equipo ,email:email, telefono:telefono}
+    });
+
+    dialogRef.afterClosed().subscribe((resultado :any )=> {
+      if(resultado == 1){
+        this.snackbar("Empleado actualizado","Exito");
+        this.getEmpleados();
+      }else if(resultado ==99){
+        this.snackbar("Error al actualizar empleado","Error");
+      }
+    });
+  }
+  
   snackbar(mensaje: string, accion: string): MatSnackBarRef<SimpleSnackBar> {
     return this._snackbar.open(mensaje, accion, {
       duration: 2000,
