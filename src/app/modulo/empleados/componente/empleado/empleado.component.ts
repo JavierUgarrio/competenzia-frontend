@@ -6,6 +6,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { FormularioEmpleadoComponent } from '../formulario-empleado/formulario-empleado.component';
 import { MatSnackBar, MatSnackBarRef, SimpleSnackBar } from '@angular/material/snack-bar';
+import { ValidarComponent } from 'src/app/modulo/comun/componentes/validar/validar.component';
 
 @Component({
   selector: 'empleado',
@@ -68,7 +69,23 @@ export class EmpleadoComponent implements OnInit {
       }
     });
   }
-  
+
+  eliminar(id:any){
+    const dialogRef = this.dialog.open( ValidarComponent , { // Aquí se abre el diálogo, hay un espacio vacio que tendre que crear un formulario como componente y añadirlo
+      width: '400px',
+      data: {id :id}
+    });
+
+    dialogRef.afterClosed().subscribe((resultado :any )=> {
+      if(resultado == 1){
+        this.snackbar("Empleado eliminado","Exito");
+        this.getEmpleados();
+      }else if(resultado ==99){
+        this.snackbar("Error al eliminar empleado","Error");
+      }
+    });
+  }
+
   snackbar(mensaje: string, accion: string): MatSnackBarRef<SimpleSnackBar> {
     return this._snackbar.open(mensaje, accion, {
       duration: 2000,

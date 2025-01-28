@@ -41,6 +41,13 @@ export class EmpleadoService {
  actualizarEmpleado(empleado :any, id:number){
   return this.http.put(`${this.urlApi}/empleados/${id}`, empleado);
  }
+
+ /**
+  * Metodo para eliminar empleado
+  */
+ eliminarEmpleado( id:number){
+  return this.http.delete(`${this.urlApi}/empleados/${id}`);
+ }
 }
 
 

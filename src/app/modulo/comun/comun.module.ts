@@ -5,12 +5,14 @@ import { SidenavComponent } from './componentes/sidenav/sidenav.component';
 import { MaterialModule } from './material.module';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { ValidarComponent } from './componentes/validar/validar.component';
 
 
 
 @NgModule({
   declarations: [
     SidenavComponent,
+    ValidarComponent,
 
   ],
   exports: [

@@ -64,7 +64,7 @@
                         <mat-icon aria-label="Edit" (click)="editar(elemento.id, elemento.nombre, elemento.apellidos, elemento.empresa, elemento.equipo, elemento.email,elemento.telefono)">edit</mat-icon>
                     </button>
                     <button mat-icon-button color="accent">
-                        <mat-icon aria-label="Delete">delete</mat-icon>
+                        <mat-icon aria-label="Delete" (click)="eliminar(elemento.id)">delete</mat-icon>
                     </button>
                 </td>
             </ng-container>
