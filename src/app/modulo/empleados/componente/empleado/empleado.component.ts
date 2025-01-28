@@ -5,6 +5,7 @@ import { catchError } from 'rxjs/operators';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { FormularioEmpleadoComponent } from '../formulario-empleado/formulario-empleado.component';
+import { MatSnackBar, MatSnackBarRef, SimpleSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'empleado',
@@ -15,6 +16,7 @@ export class EmpleadoComponent implements OnInit {
 
   private _empleadoServicios = inject(EmpleadoService);
   public dialog = inject(MatDialog);
+  private _snackbar = inject(MatSnackBar);
   
   empleados:EmpleadoServicio [] = [];
   columnas : string[] = ['id','nombre','apellidos','empresa','equipo','email','telefono','acciones'];
@@ -34,6 +36,7 @@ export class EmpleadoComponent implements OnInit {
       },
     });
   }
+
   ventanaDialogoEmepleado(){
   const dialogRef = this.dialog.open( FormularioEmpleadoComponent, { // Aquí se abre el diálogo, hay un espacio vacio que tendre que crear un formulario como componente y añadirlo
       width: '600px'
@@ -41,8 +44,20 @@ export class EmpleadoComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((resultado :any )=> {
-      
+      if(resultado == 1){
+        this.snackbar("Empleado agregado","Exito");
+        this.getEmpleados();
+      }else if(resultado ==99){
+        this.snackbar("Error al agregar empleado","Error");
+      }
     });
+  }
+
+  snackbar(mensaje: string, accion: string): MatSnackBarRef<SimpleSnackBar> {
+    return this._snackbar.open(mensaje, accion, {
+      duration: 2000,
+    });
+
   }
 }
  
