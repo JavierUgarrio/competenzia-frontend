@@ -19,6 +19,7 @@ export class EmpleadoComponent implements OnInit {
   public dialog = inject(MatDialog);
   private _snackbar = inject(MatSnackBar);
   
+  empleado :any;
   empleados:EmpleadoServicio [] = [];
   columnas : string[] = ['id','nombre','apellidos','empresa','equipo','email','telefono','acciones'];
 
@@ -84,6 +85,15 @@ export class EmpleadoComponent implements OnInit {
         this.snackbar("Error al eliminar empleado","Error");
       }
     });
+  }
+
+  buscar(nombre:any){
+      this._empleadoServicios.buscarEmpleado(nombre)
+      .subscribe((respuesta:any)=>{
+        this.empleados = respuesta;
+      },(error:any)=>{
+        console.log(error);
+    })
   }
 
   snackbar(mensaje: string, accion: string): MatSnackBarRef<SimpleSnackBar> {

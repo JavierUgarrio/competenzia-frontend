@@ -13,8 +13,7 @@
         <div class="buscador">
             <mat-form-field appearance="legacy">
                 <mat-label>Buscar empleado</mat-label>
-                <input matInput #input>
-                
+                <input matInput #input (keyup)="buscar(input.value)" type="number" placeholder="introduce id">
             </mat-form-field>
         </div>
    </mat-card-header>

@@ -48,6 +48,12 @@ export class EmpleadoService {
  eliminarEmpleado( id:number){
   return this.http.delete(`${this.urlApi}/empleados/${id}`);
  }
+ /**
+  * Metodo para buscar empleado por id
+  */
+ buscarEmpleado( id:any){
+  return this.http.get(`${this.urlApi}/empleados/${id}`);
+ }
 }
 
 
