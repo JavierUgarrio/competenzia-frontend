@@ -5,6 +5,7 @@ import { PanelcentralComponent } from './paginas/panelcentral.component';
 import { RouterModule } from '@angular/router';
 import { ComunModule } from '../comun/comun.module';
 import { EmpleadoModule } from '../empleados/empleado.module';
+import { TestCompetenciaModule } from '../testCompetencia/test-competencia.module';
 
 
 
@@ -18,7 +19,8 @@ import { EmpleadoModule } from '../empleados/empleado.module';
     CommonModule,
     RouterModule,
     ComunModule, 
-    EmpleadoModule
+    EmpleadoModule,
+    TestCompetenciaModule
   ]
 })
 export class PanelcentralModule { }

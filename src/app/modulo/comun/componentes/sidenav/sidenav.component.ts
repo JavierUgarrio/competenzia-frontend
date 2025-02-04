@@ -8,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class SidenavComponent implements OnInit {
 
 menuNav = [
-    {name: "Home", route: "home", icon:"psychology"},
-    {name: 'Empleados', route:"empleado", icon:"people_alt"},
-    {name: 'Formulario', route:"Formulario", icon:"summarize"},
-    {name: 'Graficos', route:"Graficos", icon:"assessment"}
+  {name: "Home", route: "home", icon:"psychology"},
+  {name: 'Empleados', route:"empleado", icon:"people_alt"},
+  {name: 'Formulario', route:"test-competencia", icon:"summarize"},
+  {name: 'Graficos', route:"Graficos", icon:"assessment"}
 ]
 
   constructor() { }

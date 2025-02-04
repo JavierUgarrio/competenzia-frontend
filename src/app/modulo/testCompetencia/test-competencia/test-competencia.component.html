@@ -1,0 +1,89 @@
+<mat-card>
+    <h2 class="titulo">Competencias</h2>
+    <mat-card-header class="contenedor-cabecera">
+        <div class="contenedor-izquierda">
+            <div>
+                <h4><strong> Estructura del Test de Competencias</strong></h4>
+                <p>Esta evaluación tiene como propósito medir el desempeño de cada empleado en tres competencias clave:</p>
+                <ul>
+                    <li>Trabajo en equipo</li>
+                    <li>Organización</li>
+                    <li>Liderazgo</li>
+                </ul>
+                <p>El objetivo es obtener un análisis objetivo y basado en evidencia sobre el nivel de cada empleado en estas competencias.</p>
+            </div>
+            <div>
+                <p>Se tratan de preguntas cerradas con una única opción de respuesta. Cada competencia tiene 9 preguntas, diseñadas para evaluar distintos aspectos de la misma. Las opciones de respuesta son las siguientes:</p>
+                <ul>
+                    <li>Siempre</li>
+                    <li>Bastante</li>
+                    <li>Raramente</li>
+                    <li>Nunca</li>
+                </ul>
+                <p>El manager debe basarse en experiencias concretas y observaciones reales sobre el desempeño del empleado. No deben tomarse en cuenta suposiciones o percepciones sin fundamento.</p>
+            </div>
+        </div>
+
+      <div class="contenedor-derecha">
+        <h4><strong>Instrucciones para el Manager</strong></h4>
+        <ol>
+          <li>Lee cada pregunta con atención.</li>
+          <li>Elige la opción que mejor represente el comportamiento del empleado según tu experiencia trabajando con él.</li>
+          <li>Responde todas las preguntas antes de enviar el test.</li>
+          <li>Una vez enviado, la evaluación quedará registrada y no podrá ser editada ni eliminada.</li>
+        </ol>
+      </div>
+    </mat-card-header>
+   <mat-card-content>
+        <table mat-table [dataSource]="empleados" class="mat-elevation-z8">
+           <!--id columna-->
+           <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef>ID</th>
+                <td mat-cell *matCellDef="let elemento">{{elemento.id}}</td>
+           </ng-container>
+           <!--nombre columna-->
+           <ng-container matColumnDef="nombre">
+                <th mat-header-cell *matHeaderCellDef>Nombre</th>
+                <td mat-cell *matCellDef="let elemento">{{elemento.nombre}}</td>
+            </ng-container>
+            <!--apellido columna-->
+            <ng-container matColumnDef="apellidos">
+                <th mat-header-cell *matHeaderCellDef>Apellidos</th>
+                <td mat-cell *matCellDef="let elemento">{{elemento.apellidos}}</td>
+            </ng-container>
+            <!--empresa columna-->
+            <ng-container matColumnDef="empresa">
+                <th mat-header-cell *matHeaderCellDef>Empresa</th>
+                <td mat-cell *matCellDef="let elemento">{{elemento.empresa}}</td>
+            </ng-container>
+            <!--equipo columna-->
+            <ng-container matColumnDef="equipo">
+                <th mat-header-cell *matHeaderCellDef>Equipo</th>
+                <td mat-cell *matCellDef="let elemento">{{elemento.equipo}}</td>
+            </ng-container>
+            <!--telefono columna-->
+            <ng-container matColumnDef="telefono">
+                <th mat-header-cell *matHeaderCellDef>Teléfono</th>
+                <td mat-cell *matCellDef="let elemento">{{elemento.telefono}}</td>
+            </ng-container>
+            <!--email columna-->
+            <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef>Email</th>
+                <td mat-cell *matCellDef="let elemento">{{elemento.email}}</td>
+            </ng-container>
+            <!--acciones columna-->
+            <ng-container matColumnDef="acciones">
+                <th mat-header-cell *matHeaderCellDef>Accciones</th>
+                <td mat-cell *matCellDef="let elemento; let i=index">
+                    <button mat-icon-button color="accent">
+                        <mat-icon aria-label="Edit" (click)="guardarFormulario(elemento.id)">fact_check</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+            <tr mat-row *matRowDef="let row; columns:columnas;"></tr>
+            
+        </table>
+   </mat-card-content>
+</mat-card>

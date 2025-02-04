@@ -1,0 +1,40 @@
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: auto;
+    margin: auto;
+}
+  
+mat-radio-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column; 
+}
+
+.enviar{
+    background-color: #ee760c;
+}
+
+
+.cancelar{
+    background-color: #a1a1a0;
+}
+
+h3{
+    background-color: #ee760c;
+    color: #fafcfa;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 4px 8px;
+}
+
+.parrafo{
+    background-color: #fafcfa;
+    color: black;
+    border-radius: 4px;
+}
+
+mat-dialog-content {
+    max-height: 400px; /* Ajusta la altura máxima */
+    overflow-y: auto; /* Habilita el desplazamiento vertical si es necesario */
+}

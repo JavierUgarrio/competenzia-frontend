@@ -1,0 +1,56 @@
+.titulo{
+    text-align: left;
+    margin-top: 15;
+
+}
+
+ul li{
+    list-style: none;
+}
+
+.botonagregar{
+    color: #fafcfa;
+    background-color:#ee760c ;
+}
+
+.buscador{
+    margin-left: auto;
+}
+
+table{
+    width: 100%;
+    text-align: left;
+
+}
+
+mat-form-field{
+    width: 140px;
+}
+
+.contenedor-cabecera{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.contenedor-izquierda{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: 50%
+}
+
+.contenedor-derecha{
+    flex: 1;
+    text-align: left;
+    max-width: 50%;
+}
+
+h4{
+    background-color: #ee760c;
+    color: #fafcfa;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 4px 8px;
+}

@@ -1,0 +1,131 @@
+<h2 mat-dialog-title>Test Competencias</h2>
+<div mat-card-image></div>
+<mat-dialog-content>
+    <form [formGroup]="nuevoFormularioCompetencia" >
+        <!-- TRABAJO EN EQUIPO -->
+        <h3>Trabajo en equipo</h3>
+        <p class="parrafo">Es la habilidad de colaborar eficazmente con otras personas para alcanzar un objetivo común. Implica comunicar ideas, escuchar a los demás, respetar diferentes puntos de vista, y contribuir de manera activa y positiva al grupo. </p>
+        <h4>¿Escuchas las ideas de los demás antes de tomar una decisión? te1a</h4>
+        <mat-radio-group formControlName="respuesta">
+            <mat-radio-button *ngFor="let opcion of opciones" [value]="opcion.value">{{ opcion.viewValue }}</mat-radio-button>
+        </mat-radio-group>
+        <h4>¿Respetas las opiniones de tus compañeros aunque no estés de acuerdo? te1b</h4>
+        <mat-radio-group formControlName="respuesta">
+            <mat-radio-button *ngFor="let opcion of opciones" [value]="opcion.value">{{ opcion.viewValue }}</mat-radio-button>
+        </mat-radio-group>
+        <h4>¿Pides ayuda a otros cuando la necesitas? te1c</h4>
+        <mat-radio-group formControlName="respuesta">
+            <mat-radio-button *ngFor="let opcion of opciones" [value]="opcion.value">{{ opcion.viewValue }}</mat-radio-button>
+        </mat-radio-group>
+        <h4>¿Compartes información y recursos con tus compañeros para lograr los objetivos del equipo? te2a</h4>
+        <mat-radio-group formControlName="respuesta">
+            <mat-radio-button *ngFor="let opcion of opciones" [value]="opcion.value">{{ opcion.viewValue }}</mat-radio-button>
+        </mat-radio-group>
+        <h4>¿Buscas resolver conflictos de manera respetuosa y sin afectar el ambiente de trabajo? te2b</h4>
+        <mat-radio-group formControlName="respuesta">
+            <mat-radio-button *ngFor="let opcion of opciones" [value]="opcion.value">{{ opcion.viewValue }}</mat-radio-button>
+        </mat-radio-group>
+        <h4>¿Adaptas tu forma de trabajar para integrarte bien en un equipo diverso? te2c</h4>
+        <mat-radio-group formControlName="respuesta">
+            <mat-radio-button *ngFor="let opcion of opciones" [value]="opcion.value">{{ opcion.viewValue }}</mat-radio-button>
+        </mat-radio-group>
+        <h4>¿Motivas a otros compañeros para que participen activamente en el trabajo en equipo? te3a</h4>
+        <mat-radio-group formControlName="respuesta">
+            <mat-radio-button *ngFor="let opcion of opciones" [value]="opcion.value">{{ opcion.viewValue }}</mat-radio-button>
+        </mat-radio-group>
+        <h4>¿Tomas la iniciativa para mejorar la comunicación dentro del equipo? te3b</h4>
+        <mat-radio-group formControlName="respuesta">
+            <mat-radio-button *ngFor="let opcion of opciones" [value]="opcion.value">{{ opcion.viewValue }}</mat-radio-button>
+        </mat-radio-group>
+        <h4>¿Facilitas la colaboración entre equipos diferentes dentro de la empresa? te3c</h4>
+        <mat-radio-group formControlName="respuesta">
+            <mat-radio-button *ngFor="let opcion of opciones" [value]="opcion.value">{{ opcion.viewValue }}</mat-radio-button>
+        </mat-radio-group>
+        <!-- ORGANIZACION -->
+        <h3>Organización</h3>
+        <p class="parrafo">Es la habilidad para planificar, estructurar y gestionar tareas, recursos y tiempo de manera eficiente. Implica establecer prioridades, definir objetivos claros y seguir un plan para lograr metas </p>
+        <h4>¿Planificas tu trabajo antes de comenzar una tarea? o1a</h4>
+        <mat-radio-group formControlName="respuesta">
+            <mat-radio-button *ngFor="let opcion of opciones" [value]="opcion.value">{{ opcion.viewValue }}</mat-radio-button>
+        </mat-radio-group>
+        <h4>¿Sigues un orden para completar tus tareas diarias? o1b</h4>
+        <mat-radio-group formControlName="respuesta">
+            <mat-radio-button *ngFor="let opcion of opciones" [value]="opcion.value">{{ opcion.viewValue }}</mat-radio-button>
+        </mat-radio-group>
+        <h4>¿Cumples con los plazos establecidos para tu trabajo? o1c</h4>
+        <mat-radio-group formControlName="respuesta">
+            <mat-radio-button *ngFor="let opcion of opciones" [value]="opcion.value">{{ opcion.viewValue }}</mat-radio-button>
+        </mat-radio-group>
+        <h4>¿Priorizas las tareas según su importancia y urgencia? o2a</h4>
+        <mat-radio-group formControlName="respuesta">
+            <mat-radio-button *ngFor="let opcion of opciones" [value]="opcion.value">{{ opcion.viewValue }}</mat-radio-button>
+        </mat-radio-group>
+        <h4>¿Mantienes organizados tus documentos y herramientas de trabajo? o2b</h4>
+        <mat-radio-group formControlName="respuesta">
+            <mat-radio-button *ngFor="let opcion of opciones" [value]="opcion.value">{{ opcion.viewValue }}</mat-radio-button>
+        </mat-radio-group>
+        <h4>¿Te anticipas a posibles problemas y tomas medidas para evitarlos? o2c</h4>
+        <mat-radio-group formControlName="respuesta">
+            <mat-radio-button *ngFor="let opcion of opciones" [value]="opcion.value">{{ opcion.viewValue }}</mat-radio-button>
+        </mat-radio-group>
+        <h4>¿Diseñas estrategias para mejorar la eficiencia en tu área de trabajo? o3a</h4>
+        <mat-radio-group formControlName="respuesta">
+            <mat-radio-button *ngFor="let opcion of opciones" [value]="opcion.value">{{ opcion.viewValue }}</mat-radio-button>
+        </mat-radio-group>
+        <h4>¿Delegas tareas adecuadamente cuando es necesario? o3b</h4>
+        <mat-radio-group formControlName="respuesta">
+            <mat-radio-button *ngFor="let opcion of opciones" [value]="opcion.value">{{ opcion.viewValue }}</mat-radio-button>
+        </mat-radio-group>
+        <h4>¿Supervisas y ajustas tu planificación para optimizar los resultados? o3c</h4>
+        <mat-radio-group formControlName="respuesta">
+            <mat-radio-button *ngFor="let opcion of opciones" [value]="opcion.value">{{ opcion.viewValue }}</mat-radio-button>
+        </mat-radio-group>
+        <!-- LIDERAZGO -->
+        <h3>Liderazgo</h3>
+        <p class="parrafo">Es la habilidad de guiar, motivar e influir en otras personas para alcanzar objetivos comunes </p>
+        <h4>¿Das el ejemplo con tu actitud y compromiso en el trabajo? l1a</h4>
+        <mat-radio-group formControlName="respuesta">
+            <mat-radio-button *ngFor="let opcion of opciones" [value]="opcion.value">{{ opcion.viewValue }}</mat-radio-button>
+        </mat-radio-group>
+        <h4>¿Reconoces el esfuerzo y logros de tus compañeros? l1b</h4>
+        <mat-radio-group formControlName="respuesta">
+            <mat-radio-button *ngFor="let opcion of opciones" [value]="opcion.value">{{ opcion.viewValue }}</mat-radio-button>
+        </mat-radio-group>
+        <h4>¿Aceptas la responsabilidad de tus acciones y decisiones? l1c</h4>
+        <mat-radio-group formControlName="respuesta">
+            <mat-radio-button *ngFor="let opcion of opciones" [value]="opcion.value">{{ opcion.viewValue }}</mat-radio-button>
+        </mat-radio-group>
+        <h4>¿Motivas a los demás a alcanzar sus objetivos? l2a</h4>
+        <mat-radio-group formControlName="respuesta">
+            <mat-radio-button *ngFor="let opcion of opciones" [value]="opcion.value">{{ opcion.viewValue }}</mat-radio-button>
+        </mat-radio-group>
+        <h4>¿Resuelves problemas y tomas decisiones sin depender siempre de otros? l2b</h4>
+        <mat-radio-group formControlName="respuesta">
+            <mat-radio-button *ngFor="let opcion of opciones" [value]="opcion.value">{{ opcion.viewValue }}</mat-radio-button>
+        </mat-radio-group>
+        <h4>¿Comunicas de manera clara y efectiva tus ideas al equipo? l2c</h4>
+        <mat-radio-group formControlName="respuesta">
+            <mat-radio-button *ngFor="let opcion of opciones" [value]="opcion.value">{{ opcion.viewValue }}</mat-radio-button>
+        </mat-radio-group>
+        <h4>¿Inspiras y guías a otros para que desarrollen su potencial? l3a</h4>
+        <mat-radio-group formControlName="respuesta">
+            <mat-radio-button *ngFor="let opcion of opciones" [value]="opcion.value">{{ opcion.viewValue }}</mat-radio-button>
+        </mat-radio-group>
+        <h4>¿Gestionas situaciones difíciles sin perder la calma ni la dirección? l3b</h4>
+        <mat-radio-group formControlName="respuesta">
+            <mat-radio-button *ngFor="let opcion of opciones" [value]="opcion.value">{{ opcion.viewValue }}</mat-radio-button>
+        </mat-radio-group>
+        <h4>¿Influyes en la visión y estrategia de la empresa con tus decisiones? l3c</h4>
+        <mat-radio-group formControlName="respuesta">
+            <mat-radio-button *ngFor="let opcion of opciones" [value]="opcion.value">{{ opcion.viewValue }}</mat-radio-button>
+        </mat-radio-group>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button class="enviar" (click)="guardarFormulario()" [disabled]="nuevoFormularioCompetencia.invalid">
+        <mat-icon>save</mat-icon>Guardar
+    </button>
+    <button mat-button class="cancelar" (click)="cancelar()">
+        <mat-icon>close</mat-icon>Cancelar
+    </button>
+</mat-dialog-actions>
