@@ -32,19 +32,27 @@ mat-form-field{
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
+    background-color: grey;
+    color: #fafcfa;
+    border-radius: 4px;
 }
 
 .contenedor-izquierda{
     display: flex;
     flex-direction: column;
     flex: 1;
-    max-width: 50%
+    max-width: 50%;
+    border-right: 1px solid #e6e6e6;
+    
 }
 
 .contenedor-derecha{
     flex: 1;
     text-align: left;
     max-width: 50%;
+    border-radius: 4px;
+    padding-left: 30px;
+   
 }
 
 h4{

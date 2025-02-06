@@ -56,28 +56,11 @@ export class TestCompetenciaComponent implements OnInit {
       });
     }
   
-    editar(id:number){
-      const dialogRef = this.dialog.open( FormularioCompetenciaComponent, { // Aquí se abre el diálogo, hay un espacio vacio que tendre que crear un formulario como componente y añadirlo
-        width: '600px',
-        data: {id :id }
-      });
-  
-      dialogRef.afterClosed().subscribe((resultado :any )=> {
-        if(resultado == 1){
-          this.snackbar("Test creado","Exito");
-          //this.getEmpleados();
-        }else if(resultado ==99){
-          this.snackbar("Error en el test","Error");
-        }
-      });
-    }
-  
-  
 
-    guardarFormulario(id:number){
+    guardarFormulario(){
       const dialogRef = this.dialog.open( FormularioCompetenciaComponent, { // Aquí se abre el diálogo, hay un espacio vacio que tendre que crear un formulario como componente y añadirlo
         width: '1000px',
-        data: {id :id }
+        data: {}
       });
   
       dialogRef.afterClosed().subscribe((resultado :any )=> {
@@ -88,6 +71,7 @@ export class TestCompetenciaComponent implements OnInit {
           this.snackbar("Error en el test","Error");
         }
       }); 
+      
     }
   
     

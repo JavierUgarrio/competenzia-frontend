@@ -34,7 +34,9 @@
         </ol>
       </div>
     </mat-card-header>
+    <div mat-card-image></div>
    <mat-card-content>
+    <h2 class="titulo">Empleados</h2>
         <table mat-table [dataSource]="empleados" class="mat-elevation-z8">
            <!--id columna-->
            <ng-container matColumnDef="id">
@@ -76,7 +78,7 @@
                 <th mat-header-cell *matHeaderCellDef>Accciones</th>
                 <td mat-cell *matCellDef="let elemento; let i=index">
                     <button mat-icon-button color="accent">
-                        <mat-icon aria-label="Edit" (click)="guardarFormulario(elemento.id)">fact_check</mat-icon>
+                        <mat-icon aria-label="Edit" (click)="guardarFormulario()">fact_check</mat-icon>
                     </button>
                 </td>
             </ng-container>
