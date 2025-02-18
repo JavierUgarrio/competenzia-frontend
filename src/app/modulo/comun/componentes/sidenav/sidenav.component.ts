@@ -11,7 +11,7 @@ menuNav = [
   {name: "Home", route: "home", icon:"psychology"},
   {name: 'Empleados', route:"empleado", icon:"people_alt"},
   {name: 'Formulario', route:"test-competencia", icon:"summarize"},
-  {name: 'Graficos', route:"Graficos", icon:"assessment"}
+  {name: 'Graficos', route:"app-grafica", icon:"assessment"}
 ]
 
   constructor() { }

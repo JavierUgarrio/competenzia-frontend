@@ -15,5 +15,11 @@ export class TestCompetenciaService {
   guardarTestCompetencia(testCompetencia: any){
     return this.http.post(`${this.urlApi}/test-competencia`,testCompetencia);
   }
+
+  // Servicio mostrar el testCompetencia
+
+  mostrarTestCompetencia(){
+    return this.http.get(`${this.urlApi}/app-grafica`);
+  }
 }
 

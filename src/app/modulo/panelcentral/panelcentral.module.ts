@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { ComunModule } from '../comun/comun.module';
 import { EmpleadoModule } from '../empleados/empleado.module';
 import { TestCompetenciaModule } from '../testCompetencia/test-competencia.module';
+import { GraficasModule } from '../graficas/graficas.module';
 
 
 
@@ -20,7 +21,8 @@ import { TestCompetenciaModule } from '../testCompetencia/test-competencia.modul
     RouterModule,
     ComunModule, 
     EmpleadoModule,
-    TestCompetenciaModule
+    TestCompetenciaModule,
+    GraficasModule
   ]
 })
 export class PanelcentralModule { }
