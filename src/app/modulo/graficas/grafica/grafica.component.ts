@@ -1,8 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
+import { MatLegacyTableDataSource as MatTableDataSource } from '@angular/material/legacy-table';
 import { EmpleadoService, EmpleadoServicio } from '../../comun/servicios/empleado.service';
 import { TestCompetenciaService } from '../../comun/servicios/test-competencia.service';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { Chart } from 'chart.js';
 
 

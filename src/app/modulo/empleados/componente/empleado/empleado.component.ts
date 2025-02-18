@@ -2,10 +2,10 @@ import { Component, OnInit,inject } from '@angular/core';
 import { EmpleadoService, EmpleadoServicio } from 'src/app/modulo/comun/servicios/empleado.service';
 import { Observable,of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { MatTableDataSource } from '@angular/material/table';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyTableDataSource as MatTableDataSource } from '@angular/material/legacy-table';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { FormularioEmpleadoComponent } from '../formulario-empleado/formulario-empleado.component';
-import { MatSnackBar, MatSnackBarRef, SimpleSnackBar } from '@angular/material/snack-bar';
+import { MatLegacySnackBar as MatSnackBar, MatLegacySnackBarRef as MatSnackBarRef, LegacySimpleSnackBar as SimpleSnackBar } from '@angular/material/legacy-snack-bar';
 import { ValidarComponent } from 'src/app/modulo/comun/componentes/validar/validar.component';
 
 @Component({
