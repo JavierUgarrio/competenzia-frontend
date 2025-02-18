@@ -3,6 +3,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { EmpleadoService, EmpleadoServicio } from '../../comun/servicios/empleado.service';
 import { TestCompetenciaService } from '../../comun/servicios/test-competencia.service';
 import { MatDialog } from '@angular/material/dialog';
+import { Chart } from 'chart.js';
+
 
 
 
@@ -28,8 +30,10 @@ export class GraficaComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.mostrarTestCompetencia();
+    
     this.getEmpleados();
+    this.mostrarTestCompetencia();
+    
   }
 
 
@@ -45,18 +49,52 @@ export class GraficaComponent implements OnInit {
   }
 
   procesarTestCompetenciaServicio(resp: any){
+    const trabajoEquipo1 :number[] = [];
+    const trabajoEquipo2 :number[] = [];
+    const trabajoEquipo3 :number[] = [];
+    const organizacion1 :number[] = [];
+    const organizacion2 :number[] = [];
+    const organizacion3 :number[] = [];
+    const liderazgo1 :number[] = [];
+    const liderazgo2 :number[] = [];
+    const liderazgo3 :number[] = [];
+    const id:number[] = [];
+    const nombre:string[] = [];
 
     const datosTest : ITestCompetenciaGrafica[] = [];
+
     if(resp.metadata[0].coode =="00"){
       let listaTest = resp.respuestaCompetencia.listaTestCompetencia;
       listaTest.forEach((element:ITestCompetenciaGrafica)=>{
         element.empleadosId = element.empleadosId;
-        datosTest.push(element);
+        //datosTest.push(element);
+        trabajoEquipo1.push(element.te1);
+        trabajoEquipo2.push(element.te2);
+        trabajoEquipo3.push(element.te3);
+        organizacion1.push(element.o1);
+        organizacion2.push(element.o2);
+        organizacion3.push(element.o3);
+        liderazgo1.push(element.l1);
+        liderazgo2.push(element.l2);
+        liderazgo3.push(element.l3);
+        id.push(element.empleadosId);
+        nombre.push(element.nombreTest);
         
       })
-      this.dataSource = new MatTableDataSource<ITestCompetenciaGrafica>(datosTest);
+      //this.dataSource = new MatTableDataSource<ITestCompetenciaGrafica>(datosTest);
 
       //graficos
+      this.objetoBarra = new Chart('canvas-bar',{
+        type: 'bar',
+        data:{
+          labels: nombre,
+          datasets:[
+            { label: 'Trabajo en equipo nivel 1', data: trabajoEquipo1}
+          ]
+        }
+
+      })
+
     }
   }
 
