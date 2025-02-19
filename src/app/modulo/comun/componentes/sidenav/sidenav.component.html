@@ -19,8 +19,10 @@
                         <mat-icon>login</mat-icon>
                     </button>
                     <mat-menu #menu="matMenu">
-                       <mat-icon>logout</mat-icon>
-                       Cerrar sesión
+                        <button mat-menu-item (click)="cerrarSesion()">
+                            <mat-icon>logout</mat-icon>
+                            Cerrar sesión
+                        </button>
                     </mat-menu>
                 </li>
             </ul>

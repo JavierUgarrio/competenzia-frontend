@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { KeycloakService } from 'keycloak-angular';
 
 @Component({
   selector: 'app-sidenav',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidenav.component.css']
 })
 export class SidenavComponent implements OnInit {
+  private keyCloakService = inject(KeycloakService)
 
 menuNav = [
   {name: "Home", route: "home", icon:"psychology"},
@@ -19,4 +21,7 @@ menuNav = [
   ngOnInit(): void {
   }
 
+  cerrarSesion(){
+    this,this.keyCloakService.logout();
+  }
 }
