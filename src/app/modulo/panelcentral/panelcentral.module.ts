@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './componentes/home/home.component';
 import { PanelcentralComponent } from './paginas/panelcentral.component';
 import { RouterModule } from '@angular/router';
+import { ComunModule } from '../comun/comun.module';
+import { EmpleadoModule } from '../empleados/empleado.module';
+import { TestCompetenciaModule } from '../testCompetencia/test-competencia.module';
+import { GraficasModule } from '../graficas/graficas.module';
 
 
 
@@ -14,7 +18,11 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ComunModule, 
+    EmpleadoModule,
+    TestCompetenciaModule,
+    GraficasModule
   ]
 })
 export class PanelcentralModule { }

@@ -1,0 +1,44 @@
+<h3 mat-dialog-title>Datos Empleado</h3>
+<mat-dialog-content>
+    <form [formGroup]="empleadoNuevoFormulario" >
+        <div>
+            <mat-form-field>
+                <mat-label>Nombre</mat-label>
+                <input matInput placeholder="introdruce nombre"  formControlName="nombre" required >
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Apellidos</mat-label>
+                <input matInput placeholder="introdruce apellidos"  formControlName="apellidos" required>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="introdruce email"  formControlName="email" required>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Empresa</mat-label>
+                <input matInput placeholder="introdruce la empresa"  formControlName="empresa" required>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Equipo</mat-label>
+                <input matInput placeholder="introdruce el equipo que pertenece"  formControlName="equipo" required>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Telefono</mat-label>
+                <input matInput placeholder="introdruce telefono"  formControlName="telefono" required>
+            </mat-form-field>
+        </div>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button class="enviar" (click)="guardarFormulario()" [disabled]="empleadoNuevoFormulario.invalid">
+        <mat-icon>save</mat-icon>Guardar
+    </button>
+    <button mat-button class="cancelar" (click)="cancelar()">
+        <mat-icon>close</mat-icon>Cancelar
+    </button>
+</mat-dialog-actions>
