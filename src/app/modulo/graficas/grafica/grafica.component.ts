@@ -4,6 +4,7 @@ import { EmpleadoService, EmpleadoServicio } from '../../comun/servicios/emplead
 import { TestCompetenciaService } from '../../comun/servicios/test-competencia.service';
 import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { Chart } from 'chart.js';
+import { ChartData, ChartOptions } from 'chart.js';
 
 
 
@@ -15,12 +16,12 @@ import { Chart } from 'chart.js';
   
 })
 export class GraficaComponent implements OnInit {
+  
+  public chart !: Chart;
 
-  objetoBarra : any;
   private _empleadoServicios = inject(EmpleadoService);
   private _testCompetencia = inject(TestCompetenciaService);
-  public dialog = inject(MatDialog);
-      
+        
   empleado :any;
   empleados:EmpleadoServicio [] = [];
   columnas : string[] = ['id','nombre','apellidos','empresa','equipo','email','telefono'];
@@ -84,17 +85,82 @@ export class GraficaComponent implements OnInit {
       //this.dataSource = new MatTableDataSource<ITestCompetenciaGrafica>(datosTest);
 
       //graficos
-      this.objetoBarra = new Chart('canvas-bar',{
+      this.chart = new Chart('chart',{
         type: 'bar',
         data:{
           labels: nombre,
-          datasets:[
-            { label: 'Trabajo en equipo nivel 1', data: trabajoEquipo1}
+          datasets: [
+            {
+              label: 'Trabajo en equipo nivel 1',
+              data: trabajoEquipo1,
+              borderColor: 'rgb(255, 99, 132)', 
+              borderWidth: 1
+            },
+            {
+              label: 'Trabajo en equipo nivel 2',
+              data: trabajoEquipo2,
+              borderColor: 'rgb(255, 159, 64)', 
+              borderWidth: 1
+            },
+            {
+              label: 'Trabajo en equipo nivel 3',
+              data: trabajoEquipo3,
+              borderColor: 'rgb(255, 205, 86)', 
+              borderWidth: 1
+            },
+            {
+              label: 'Organización nivel 1',
+              data: organizacion1,
+              borderColor: 'rgb(75, 192, 192)', 
+              borderWidth: 1
+            },
+            {
+              label: 'Organización nivel 2',
+              data: organizacion2,
+              borderColor: 'rgb(54, 162, 235)', 
+              borderWidth: 1
+            },
+            {
+              label: 'Organización nivel 3',
+              data: organizacion3,
+              borderColor: 'rgb(153, 102, 255)', 
+              borderWidth: 1
+            },
+            {
+              label: 'Liderazgo nivel 1',
+              data: liderazgo1,
+              borderColor: 'rgb(201, 203, 207)', 
+              borderWidth: 1
+            },
+            {
+              label: 'Liderazgo nivel 2',
+              data: liderazgo2,
+              borderColor: 'rgb(153, 102, 255)', 
+              borderWidth: 1
+            },
+            {
+              label: 'Liderazgo nivel 3',
+              data: liderazgo3,
+              borderColor: 'rgb(201, 203, 207)', 
+              borderWidth: 1
+            }
           ]
-        }
+        },
+        options:{
+          indexAxis: 'y',
+          responsive: true,
+          scales: {
+            x: {
+              beginAtZero: true
+            },
+            y: {
+              beginAtZero: true
+            }
 
+          }
+
+        }  
       })
-
     }
   }
 
@@ -120,42 +186,7 @@ export class GraficaComponent implements OnInit {
     this.panelOpenState[empleadoId] = !this.panelOpenState[empleadoId];
   }
 }
-/*
-export interface ITestCompetenciaGrafica{
-  nombreTest : string,
-  empleadosId: number,
-  //Preguntas Trabajo en equipo
-  te1a:number,
-  te1b:number,
-  te1c:number,
-  te2a:number,
-  te2b:number,
-  te2c:number,
-  te3a:number,
-  te3b:number,
-  te3c:number,
-  //Preguntas Organizacion
-  o1a:number,
-  o1b:number,
-  o1c:number,
-  o2a:number,
-  o2b:number,
-  o2c:number,
-  o3a:number,
-  o3b:number,
-  o3c:number,
-  //Preguntas Liderazgo
-  l1a:number,
-  l1b:number,
-  l1c:number,
-  l2a:number,
-  l2b:number,
-  l2c:number,
-  l3a:number,
-  l3b:number,
-  l3c:number
-}
-  */
+
 export interface ITestCompetenciaGrafica{
   nombreTest : string,
   empleadosId: number,

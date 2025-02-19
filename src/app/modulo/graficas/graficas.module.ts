@@ -8,6 +8,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { MatLegacyFormFieldModule as MatFormFieldModule } from '@angular/material/legacy-form-field';
 import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
+import { NgChartsModule } from 'ng2-charts';
+
 
 
 
@@ -26,6 +28,8 @@ import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/lega
     MatIconModule,
     MatFormFieldModule,
     MatButtonModule,
+    NgChartsModule
+  
     
   ]
 })

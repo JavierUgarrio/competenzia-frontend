@@ -3,6 +3,7 @@ form {
     flex-direction: column;
     max-width: auto;
     margin: auto;
+    background-color: grey;
 }
   
 mat-radio-group {

@@ -62,7 +62,7 @@
         <!-- Fila del Body -->
         <tr mat-row *matRowDef="let row; columns: columnas;" (click)="togglePanelState(row.id)"></tr>
       </table>
-  
+      <hr>
       <mat-accordion>
         <!-- Panel de detalles del empleado -->
         <mat-expansion-panel *ngFor="let empleado of empleados" [expanded]="panelOpenState[empleado.id]">
@@ -73,8 +73,8 @@
           </mat-expansion-panel-header>
           <mat-panel-description>
             <div>
-                <canvas id="canvas-bar" width="400" height="400">
-                    {{objetoBarra}}
+                <canvas id="chart" width="400" height="400">
+                    
                 </canvas>
             </div>
           </mat-panel-description>
